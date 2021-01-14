@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <div class="container">
+          <a class="navbar-brand" href="#">Pharmacy Management System</a>
+          <!-- Button is burger menu for mobile version-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./items.html">Items </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="./inovices.html">Inovices <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./users.html">Users</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./help.html">Help</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h3 class="text-primary">Search for an Inovice</h3>
+        <div class="form-row mb-5 py-2 px-2 border shadow-sm p-3">
+          <div class="col-3">
+            <h6>Customer Name</h6>
+            <fieldset disabled>
+            <input type="text" class="form-control" placeholder="Name">
+            </fieldset>
+          </div>
+          <div class="col-3">
+            <h6>Type</h6>
+            <fieldset disabled>
+            <select class="custom-select">
+              <option selected>select type</option>
+              <option value="1" id="1">One</option>
+              <option value="2" id="2">Two</option>
+              <option value="3" id="3">Three</option>
+            </select>
+          </fieldset>
+          </div>
+          <div class="col-3">
+            <h6>Date</h6>
+            <fieldset disabled>
+            <input type="date" class="form-control">
+            </fieldset>
+          </div>
+          <div class="col-3 mt-4">
+            <fieldset disabled class="d-inline">
+            <button type="submit" class="btn btn-primary">Search</button>
+            </fieldset>
+            <button type="submit" onclick="location.href ='./new-inovice.html'" class="btn bg-success ml-2 text-white">New Inovice</button>
+          </div>
+        </div>
+
+        <!-- Items Table -->
+        <h3 class="text-primary">All Inovices</h3>
+        <div class="row mb-5 shadow-sm p-3">
+          <table class="table table-hover table-responsive-lg">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" >#</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total Price</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody id="t-body">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <footer class="bg-dark py-5">
+        <p class="text-center text-white"> Copyright @ Pharmacy Management System 2020</p>
+      </footer>
+    
+      <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+      <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>    
+      <script src="../javascript/inovice.js"></script>
+</body>
+</html>

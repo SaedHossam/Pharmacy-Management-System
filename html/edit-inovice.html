@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <!-- <style>
+        /* Dropdown Button */
+.dropbtn {
+  /* background-color: #4CAF50; */
+  color: white;
+  /* padding: 16px;
+  font-size: 16px; */
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+/* .dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+} */
+
+/* The search field */
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+    </style> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pharmacy Management System</a>
+            <!-- Button is burger menu for mobile version-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./items.html">Items </span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./inovices.html">Inovices <span class="sr-only">(current)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./users.html">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./help.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3 class="text-primary">Edit Inovice</h3>
+        <div class="border shadow-sm mb-5">
+            <div class="form-row mb-1 py-1 px-2  p-3">
+                <div class="col-4">
+                    <h6>Customer Name</h6>
+                    <fieldset disabled>
+                        <input id="customerName" type="text" class="form-control" placeholder="Name">
+                    </fieldset>
+                </div>
+                <div class="col-4">
+                    <h6>Inovice Type</h6>
+                    <fieldset disabled>
+                        <select class="custom-select" id="inoviceType">
+                            <option value="1" id="sell">Sell</option>
+                            <option value="2" id="buy">Buy</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="col-4">
+                    <h6>Inovice Date</h6>
+                    <fieldset disabled>
+                        <input id="inoviceDate" type="date" class="form-control">
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="form-row mb-1  px-2 p-3">
+
+                <div class="col-2">
+                    <h6>Drug Name</h6>
+
+                    <div class="dropdown">
+                        <input value="select" class="btn btn-outline-secondary dropdown-toggle" type="button"
+                            id="drugNameDrobButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div id="itemsDropdown" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <input id="searchItem" type="text" class="dropdown-item">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-2">
+                    <h6>Quantity</h6>
+                    <input id="orderedQuantity" type="number" class="form-control">
+                </div>
+                <div class="col-2">
+                    <h6>Type</h6>
+                    <select id="orderedType" class="custom-select">
+                        <option value="1" id="1">Sell</option>
+                        <option value="2" id="2">Return Sale</option>
+                    </select>
+                </div>
+                <div class="col-2 mt-4">
+                    <button id="addItem" type="button" class="btn  btn-primary ml-1 text-white">Add/Update</button>
+                </div>
+                <div class="col-2 mt-4 ">
+                    <button id="deleteItem" type="button" class="btn  btn-danger ml-2 text-white">Delete</button>
+                </div>
+                <div class="col-2 mt-4 ">
+                    <button id="cancelItem" type="button" class="btn  btn-secondary ml-2 text-white">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <h3 class="text-primary">Details</h3>
+        <div class="row mb-5 shadow-sm ">
+            <table class="table table-hover table-responsive-lg">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Drug Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit price</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">sell/return</th>
+                    </tr>
+                </thead>
+                <tbody id="t-body">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-row mr-auto mb-5">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-4">
+                        <h6>Total Items</h6>
+                        <fieldset disabled>
+                            <input id="totalItems" type="number" class="form-control">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-4">
+                        <h6>Total ($)</h6>
+                        <fieldset disabled>
+                            <input id="totalMoney" type="number" class="form-control">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-4">
+                        <h6>Paid</h6>
+                        <input id="paid" type="number" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-4 mt-4">
+                        <input id="save" type="button" value="Save" class="btn btn-primary pt-1 ">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <input id="cancel" type="button" value="Cancel" class="btn btn-secondary pt-1 ">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <input id="delete" type="button" value="Delete" class="btn btn-danger pt-1 ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-5">
+        <p class="text-center text-white"> Copyright @ Pharmacy Management System 2020</p>
+    </footer>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/edit-inovice.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pharmacy Management System</a>
+            <!-- Button is burger menu for mobile version-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./items.html">Items </span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./inovices.html">Inovices <span class="sr-only">(current)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./users.html">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./help.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3 class="text-primary">New Inovice</h3>
+        <div class="border shadow-sm mb-5">
+            <div class="form-row mb-1 py-1 px-2  p-3">
+                <div class="col-3">
+                    <h6>Customer Name</h6>
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+            </div>
+
+            <div class="form-row mb-1  px-2 p-3">
+                <div class="col-2">
+                    <h6>Drug Type</h6>
+                    <select class="custom-select">
+                        <option selected>select Type</option>
+                        <option value="1" id="1">tablet</option>
+                        <option value="2" id="2">Liquid</option>
+                        <option value="3" id="3">Capsules</option>
+                        <option value="4" id="4">Drops</option>
+                        <option value="5" id="5">Inhalers</option>
+                        <option value="6" id="6">Injections</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                    <h6>Drug Name</h6>
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+
+                <div class="col-2">
+                    <h6>Quantity</h6>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col-2">
+                    <h6>Type</h6>
+                    <select class="custom-select">
+                        <option selected>select type</option>
+                        <option value="1" id="1">Sell</option>
+                        <option value="2" id="2">Return Sale</option>
+                    </select>
+                </div>
+                <div class="col-3 mt-4 ">
+                    <button type="submit" onclick="location.href ='./new-inovice.html'"
+                        class="btn  btn-primary ml-2 text-white">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <h3 class="text-primary">Details</h3>
+        <div class="row mb-5 shadow-sm ">
+            <table class="table table-hover table-responsive-lg">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Drug Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit price</th>
+                        <th scope="col">Total Price</th>
+                        <th scope="col">sell/return</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Panadol</td>
+                        <td>Tablets</td>
+                        <td>10</td>
+                        <td>$10.0</td>
+                        <td>$100.0</td>
+                        <td>sell</td>
+                        <td> <button class="btn btn-success rounded-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td> <button class="btn btn-danger rounded-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Panadol</td>
+                        <td>Tablets</td>
+                        <td>10</td>
+                        <td>$10.0</td>
+                        <td>$100.0</td>
+                        <td>sell</td>
+                        <td> <button class="btn btn-success rounded-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td> <button class="btn btn-danger rounded-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Panadol</td>
+                        <td>Tablets</td>
+                        <td>10</td>
+                        <td>$10.0</td>
+                        <td>$100.0</td>
+                        <td>sell</td>
+                        <td> <button class="btn btn-success rounded-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>
+                            </button>
+                        </td>
+                        <td> <button class="btn btn-danger rounded-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                    <path fill-rule="evenodd"
+                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-row mr-auto mb-5">
+            <div class="col-3">
+                <h6>Total Items</h6>
+                <fieldset disabled>
+                    <input id="disabledTextInput" type="number" class="form-control">
+                </fieldset>
+            </div>
+
+            <div class="col-3">
+                <h6>Total ($)</h6>
+                <fieldset disabled>
+                    <input id="disabledTextInput" type="number" class="form-control">
+                </fieldset>
+            </div>
+            
+            <div class="col-3">
+                <h6>Paid</h6>
+                <input type="number" class="form-control">
+            </div>
+            <div class="col-3 mt-4">
+                <input type="submit" value="save" class="btn btn-primary pt-1">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark py-5">
+        <p class="text-center text-white"> Copyright @ Pharmacy Management System 2020</p>
+    </footer>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../javascript/new-inovice.js"></script>
+</body>
+
+</html>

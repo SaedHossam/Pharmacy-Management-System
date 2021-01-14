@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="#">Pharmacy Management System</a>
+      <!-- Button is burger menu for mobile version-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./home.html">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./items.html">Items <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./inovices.html">Inovices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./users.html">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./help.html">Help</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h3 class="text-primary">New Item</h3>
+    <div class="row">
+      <div class="col-6 pr-5">
+        <form class="my-5">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="itemName">Name</label>
+              <input required type="text" class="form-control" id="itemName">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="selectNewItemType">Type</label>
+              <fieldset disabled>
+                <select class="custom-select" id="selectNewItemType">
+                  <option selected>select Type</option>
+                  <option value="1" id="1">tablet</option>
+                  <option value="2" id="2">Liquid</option>
+                  <option value="3" id="3">Capsules</option>
+                  <option value="4" id="4">Drops</option>
+                  <option value="5" id="5">Inhalers</option>
+                  <option value="6" id="6">Injections</option>
+                </select>
+              </fieldset>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="itemQuantity">Quantity</label>
+            <input required type="number" class="form-control" id="itemQuantity" placeholder="0">
+          </div>
+          <div class="form-group">
+            <label for="inputNewItemSupplier">Supplier</label>
+            <fieldset disabled>
+              <input type="text" class="form-control" id="inputNewItemSupplier" placeholder="choose Supplier">
+            </fieldset>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="itemPrice">Price</label>
+              <input type="number" class="form-control" id="itemPrice" required>
+            </div>
+            <div class="form-group col-md-12">
+              <label for="inputDescription">Description</label>
+              <fieldset disabled>
+                <textarea id="inputDescription" class="form-control"></textarea>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-6 pt-5 ">
+        <div class="row">
+          <input type="file" id="imgFile" class="col-6">
+          <!-- <input type="button" id="btn-takeImage" value="Take Image" class="btn btn-primary col-6"> -->
+        </div>
+
+        <div id="imgPreview"
+          class="row w-100 h-75 border mt-2 d-flex align-content-center justify-content-center font-weight-bold">
+          
+          <img id="item-image" src="" alt="Image Preview" class="img-fluid w-100 h-100">
+        </div>
+
+        <div class="row mx-5 pt-5">
+          <div class="col-6 d-inline">
+            <button class="btn bg-danger btn-lg text-white " id="btnCancel">Cancel</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary btn-lg" id="btnAdd">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="bg-dark py-5 ">
+    <p class="text-center text-white"> Copyright @ Pharmacy Management System 2020</p>
+  </footer>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../javascript/new-item.js"></script>
+</body>
+
+</html>
