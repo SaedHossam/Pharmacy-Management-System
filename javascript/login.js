@@ -10,7 +10,6 @@ function validate() {
     var username = document.getElementById("exampleInputEmail1").value;
     var password = document.getElementById("exampleInputPassword1").value;
     if (username == "admin@gmail.com" && password == "1234") {
-        //alert(window.location);
         window.location.href = './home.html';
         return false;
     }else alert("Wrong Email or Password");

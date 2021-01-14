@@ -1,5 +1,6 @@
 
 const tableBody = document.getElementById("t-body");
+const btnNew = document.getElementById('newInovice');
 
 var db = openDatabase('Pharmacy', '1.0', 'Pharmacy System', 5 * 1024 * 1024, function (db) {
     console.log(db);
@@ -20,7 +21,11 @@ function transSuccess(t, r) {
 }
 
 init(getRows);
-
+btnNew.addEventListener('click',createNewInovice);
+function createNewInovice(){
+    let lastRow = document.getElementById('t-body').rows.length;
+    window.document.location = '../html/new-inovice.html?inovice-id=' + lastRow;
+}
 
 // ********** Update ************
 /*
