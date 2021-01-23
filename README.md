@@ -1,8 +1,20 @@
 # Pharmacy-Management-System
+Website to manage a pharmacy.</br>
 
-to login into the system use:-</br>
-email = admin@gmail.com  </br>
-password = 1234
+## Built With:-
+1- HTML</br>
+2- CSS</br>
+3- Javascript</br>
+4- Bootstrap</br>
+5- WebSql</br>
 
-# IMPORTANT Notes:-</br>
--You Can login only with the provided email and password, in the future i will update the project and make it works.</br>
+## Install :
+Clone the repo to your machine then run 
+```bash
+npm install
+```
+## How to use
+  to login into the system open html folder then login page.</br>
+  for first time use:-</br>
+  email = admin@gmail.com  </br>
+  password = 1234
